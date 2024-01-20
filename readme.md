@@ -45,8 +45,19 @@ This is in the functions `chord_mathematical` in the class `Chords` in `chord.py
 4. Once we have the points, we can calculate the slope and intercept for each line and we can represent each line in the format `y = m*x + b`<br>
 5. Finally, after we have the equations of the lines, we can compare each line with others to see where they intersect.<br>
 6. Once we have a list of intersections, we also have to make sure that each intersections take place inside the circle. I assume we are working with a unit circle, but that can be passed in as an argument.<br>
-7. I use pythagorean theorem to make sure each set of intersections is within the radius of the circle, and if it is, I count that and return the final count as an output<br>
+7. I use pythagorean theorem to make sure each set of intersections is within the radius of the circle, and if it is, I count that and return the final count as the output<br>
 ![x, y from radians](https://i.stack.imgur.com/snoUq.png)
 
-### Method 1: Programatic approach
-This is in the functions `chord_intersection` in the class `Chords` in `chord.py` file<br>
+### Method 2: Programatic approach
+This is in the functions `chord_intersection` in the class `Chords` in `chord.py` file<br><br>
+Looking at the set of start and end radians for each line, we can make an important observation. For 2 lines to intersect the following 3 conditions need to meet:
+1. If the start of line 1 is less than (or equal to) the start of line 2 `line_1['start'] <= line_2['start']`
+2. If the end of line 1 is greater than (or equal to) the start of line 2 `line_1['edn'] >= line_2['start']`
+3. If the end of line 2 is greater than (or equal to) the end of line 1 `line_1['end'] <= line_2['end']`
+If these 3 conditions are met, then the lines intersect inside the circle.<br>
+So all I needed to do was find the start and end point of each line, and store them in a dict, and then compare each line to all the others to see if the above holds true.<br>
+If it does, then I count that and return the final count as the output
+
+<br><br><br>
+
+Note: The way the question was asked is extremly confusing. So I made some edits above, hopefully it will be easier to understand for future candidates
