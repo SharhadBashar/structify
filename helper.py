@@ -46,3 +46,21 @@ def intersection_in_circle(x, y, radius = 1):
     if not x or not y:
         return False
     return (x ** 2 + y ** 2) <= radius
+
+def chord_lines(radians, id):
+    lines = {}
+    for i in range(len(id)):
+        line_id = id[i][1]
+        rad = radians[i]
+        if (line_id not in lines.keys()):
+            lines[line_id] = [-1, -1]    
+        if (id[i][0] == 's'):
+            lines[line_id][0] = radians[i]
+        else:
+            lines[line_id][1] = radians[i]
+    return lines
+
+def intersect(line_1, line_2):
+    if (line_1[0] <= line_2[0] and line_1[1] >= line_2[0] and line_1[1] <= line_2[1]):
+        return 1
+    return 0

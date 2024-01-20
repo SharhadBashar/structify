@@ -1,6 +1,5 @@
 from draw import draw
-from chords import chord_intersection
-from mathematical import chord_mathematical
+from chords import Chords
 
 if __name__ == '__main__':
     radians = [0.5, 0.78, 1.47, 1.77, 2.56, 3.00, 3.92, 5.00]
@@ -9,5 +8,6 @@ if __name__ == '__main__':
     # id =      ['s1', 's2', 'e1', 'e2']
     draw(radians, id)
     
-    print('Mathematical Intersections:', chord_mathematical(radians, id))
-    print('Intersections:', chord_intersection(radians, id))
+    print('Intersections using mathematical method:', Chords().chord_mathematical(radians, id))
+    print()
+    print('Intersections:', Chords().chord_intersection(radians, id))
