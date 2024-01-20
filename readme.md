@@ -22,3 +22,12 @@ Explanations: Given the far right point of the circle is 0, there are two lines,
 The image below shows the inputs and the intersection in the circle.
 
 ![Image of example](/example.JPG)
+
+## How to run
+(Optional) Before running, run `pip install -r requirments.txt` to install requirments
+There are 2 ways to run:
+1. Jupyter Notebook: Simply open `chords.ipynb` and run all the cells. Third last cell has the input lists. You can modify those as needed. The first thing will be a diagram with all the lines and the intersections in the circle. Then you can see the results in the following two cells of the 2 methods I will describe below
+2. Python: Simply run `python main.py`. It will run all the methods as well as draw  a diagram with all the lines and the intersections in the circle. First will be the diagram. Then the results of the 2 methods.
+
+## Big O Time Complexity
+Both method takes O(n^2) time to run, because of the double for loop
