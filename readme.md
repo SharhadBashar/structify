@@ -54,6 +54,7 @@ Looking at the set of start and end radians for each line, we can make an import
 1. If the start of line 1 is less than (or equal to) the start of line 2 `line_1['start'] <= line_2['start']`
 2. If the end of line 1 is greater than (or equal to) the start of line 2 `line_1['edn'] >= line_2['start']`
 3. If the end of line 2 is greater than (or equal to) the end of line 1 `line_1['end'] <= line_2['end']`
+<br>
 If these 3 conditions are met, then the lines intersect inside the circle.<br>
 So all I needed to do was find the start and end point of each line, and store them in a dict, and then compare each line to all the others to see if the above holds true.<br>
 If it does, then I count that and return the final count as the output
