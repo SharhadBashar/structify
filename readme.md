@@ -30,4 +30,23 @@ There are 2 ways to run:
 2. Python: Simply run `python main.py`. It will run all the methods as well as draw  a diagram with all the lines and the intersections in the circle. First will be the diagram. Then the results of the 2 methods.
 
 ## Big O Time Complexity
-Both method takes O(n^2) time to run, because of the double for loop
+Both method takes `O(n^2)` time to run, because of the double for loops
+
+## Explanation
+I did 2 methods.<br>
+
+### Method 1: Mathematical approach
+This is in the functions `chord_mathematical` in the class `Chords` in `chord.py` file<br>
+When I first looked at the problem, the first thing that came to my mind was getting the equations of the lines and seeing where they intersect.<br>
+Since we are given the start and end radians of each line, we can find the corresponding `(x, y)` coordinates. See the image below<br>
+`x = cos(theta)`<br>
+`y = sin(theta`<br>
+Doing this for each lines start and end point, we get 2 points for each line.<br>
+Once we have the points, we can calculate the slope and intercept for each line and we can represent each line in the format `y = m*x + b`<br>
+Finally, after we have the equations of the lines, we can compare each line with others to see where they intersect.<br>
+Once we have a list of intersections, we also have to make sure that each intersections take place inside the circle. I assume we are working with a unit circle, but that can be passed in as an argument.<br>
+I use pythagorean theorem to make sure each set of intersections is within the radius of the circle, and if it is, I count that and return the final count as an output
+![x, y from radians](https://i.stack.imgur.com/snoUq.png)
+
+### Method 1: Programatic approach
+This is in the functions `chord_intersection` in the class `Chords` in `chord.py` file<br>
