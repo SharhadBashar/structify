@@ -13,7 +13,7 @@ The values themselves are radians and sorted in ascending order. Look below for 
 1. Focus on optimizing big-O runtime, but don't worry about system level optimizations
 2. Only intersections that happen inside the circle count as intersections, as chords don't continue outside of the circle.
 3. For simplicity, assume no intersections will occur at the same point and inputs are constrained `[0, 2*pi)`
-4. Any language is acceptable, though we suggest Rust, Python, C+t, C, or Javascript
+4. Any language is acceptable, though we suggest Rust, Python, C++, C, or Javascript
 
 ## Example
 Input: `[(0.78, 1.47, 1.77, 3.92), ("s1", "s2", "e1", “e2”)]`<br>
@@ -52,7 +52,7 @@ This is in the functions `chord_mathematical` in the class `Chords` in `chord.py
 This is in the functions `chord_intersection` in the class `Chords` in `chord.py` file<br><br>
 Looking at the set of start and end radians for each line, we can make an important observation. For 2 lines to intersect the following 3 conditions need to meet:
 1. If the start of line 1 is less than (or equal to) the start of line 2 `line_1['start'] <= line_2['start']`
-2. If the end of line 1 is greater than (or equal to) the start of line 2 `line_1['edn'] >= line_2['start']`
+2. If the end of line 1 is greater than (or equal to) the start of line 2 `line_1['end'] >= line_2['start']`
 3. If the end of line 2 is greater than (or equal to) the end of line 1 `line_1['end'] <= line_2['end']`
 <br>
 If these 3 conditions are met, then the lines intersect inside the circle.<br>
